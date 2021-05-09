@@ -1,0 +1,44 @@
+import java.util.HashMap;
+import java.util.Map;
+
+/* Given the following arrays:
+
+int[] ids = [1,2,3,4,5];
+String[] Names = ["Rajesh", "Prakhar", "Munavar", "Ramesh", "Mahesh"];
+String[] city = ["bombay","bangalore","mysore","delhi","chennai"];
+
+define a person class with id, name and city attributes. 
+Now create objects of this class and store them in a hashmap 
+with id as key and value as objects of the person class; */
+  
+  
+ class emp {
+	int id;
+	String name;
+	String city;
+	emp(int id,String name,String city){
+		this.id=id;
+		this.name=name;
+		this.city=city;	
+	}
+}
+class Person{
+	public static void main(String[] args) {
+		
+		HashMap<Integer, emp> hm=new HashMap<Integer,emp>();
+int[] ids = {1,2,3,4,5};
+String[] Names = {"Rajesh", "Prakhar", "Munavar", "Ramesh", "Mahesh"};
+String[] city = {"bombay","bangalore","mysore","delhi","chennai"};
+		for(int i=0;i<5;i++) {
+			emp e=new emp(ids[i],Names[i],city[i]);
+			hm.put(ids[i],e);
+			
+		}
+		 for(Map.Entry<Integer, emp> entry:hm.entrySet()){    
+		        int key=entry.getKey();  
+		        emp b=entry.getValue();    
+		        System.out.println(b.id+" "+b.name+" "+b.city);   
+		    } 
+		
+	}
+}
